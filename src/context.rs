@@ -120,11 +120,9 @@ impl Contexts {
                     self.after_opcode = false;
                 }
                 b',' => self.field = self.field.saturating_add(1),
-                b' ' | b'\t' => {
-                    if self.opcode != 0 && !self.after_opcode {
-                        self.after_opcode = true;
-                        self.field = 1;
-                    }
+                b' ' | b'\t' if self.opcode != 0 && !self.after_opcode => {
+                    self.after_opcode = true;
+                    self.field = 1;
                 }
                 _ => {}
             }

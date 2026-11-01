@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT OR Apache-2.0
 [package]
 name = "kzx"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.85"
 license = "MIT OR Apache-2.0"
@@ -31,6 +31,9 @@ include = [
 # `core` crate for the NSCC/depgraph/wasm gates.
 [dependencies]
 
+# 2026-11-01 (owner ruling 15.1): no dev-dependencies either. Workspace SSOT (metrale-digest,
+# metrale-stats) stops at this crate: the tests keep their own FNV-1a and generators so the
+# published crate and github.com/tbraun96/kzx build and test outside the workspace.
 [dev-dependencies]
 
 [package.metadata.metrale]

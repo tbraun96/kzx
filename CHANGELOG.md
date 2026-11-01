@@ -7,6 +7,16 @@ All notable changes to `kzx` are recorded here. The format follows
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-01
+
+No format or behaviour change: the compressed bytes of every fixture are identical to 0.1.0.
+
+### Fixed
+- `clippy::collapsible_match` (clippy 1.96) in the PTX field context: the whitespace arm's
+  condition is now a match guard.
+- The tests' random generators and FNV-1a/64 are inline again, so the crate's tests build
+  outside the repository it is developed in.
+
 ## [0.1.0] - 2026-10-22
 
 Initial release. Format version 1.
